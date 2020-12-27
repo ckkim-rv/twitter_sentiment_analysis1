@@ -32,17 +32,12 @@ def scoring(keyword):
     return avg
 
 if __name__ == "__main__":
-    print("What does twitter think of these two keywords?")
-    print("first candidate")
-    one = input()
-    print("second candidate")
-    two = input()
-    print("\n")
-
-    first = scoring(one)
-    second = scoring(two)
-
-    if first > second:
-        print(f"Twitter prefers {one} over {two}; {round(first,2)} > {round(second,2)}")
-    else:
-        print(f"Twitter prefers {two} over {one}; {round(second,2)} > {round(first,2)}")
+    max = -2
+    best_word = ""
+    for i in range(0, 10):
+        keyword = input('Enter Keyword:')
+        new_score = scoring(keyword)
+        if new_score > max:
+            max = new_score
+            best_word = keyword
+    print(f"{best_word} was the best tweet with the highest polarity score of {max}")
