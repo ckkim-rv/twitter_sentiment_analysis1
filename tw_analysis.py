@@ -5,6 +5,7 @@ import statistics
 
 from keys import ckey,csecret
 
+# I had a seprate keys file where I obtain the appropriate tokens for twitter API
 authentication = tweepy.AppAuthHandler(ckey,csecret)
 api = tweepy.API(authentication)
 
